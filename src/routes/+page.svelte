@@ -1,2 +1,16 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import Dashboard from "../lib/components/dashboard.svelte";
+  import Greeting from "../lib/components/greeting.svelte";
+  export let data;
+</script>
+
+<Greeting />
+<main>
+  <Dashboard {data} />
+</main>
+
+<style>
+  main {
+    height: 100%;
+  }
+</style>
