@@ -1,5 +1,4 @@
 <script>
-  const name = "Edwin";
   const greeting = (() => {
     const hour = new Date().getHours();
     if (hour < 12) {
@@ -12,13 +11,23 @@
   })();
 </script>
 
-<h1>{greeting}, {name}</h1>
+<h1>{greeting}</h1>
 
 <style>
   h1 {
     font-size: 3rem;
     text-align: center;
     margin: 2rem 0;
+    padding: 0.5rem;
     font-weight: 200;
+    border-style: solid;
+    border-image: linear-gradient(
+        90deg,
+        rgba(46, 46, 46, 1) 20%,
+        rgba(255, 255, 255, 1) 40%,
+        rgba(241, 241, 241, 1) 60%,
+        rgba(46, 46, 46, 1) 80%
+      )
+      1;
   }
 </style>
