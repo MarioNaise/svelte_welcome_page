@@ -2,6 +2,7 @@
   import Error from "./error.svelte";
   import Weather from "./weatherCard.svelte";
   import ToDo from "./toDo.svelte";
+  import Notes from "./notes.svelte";
   export let data;
 </script>
 
@@ -12,8 +13,9 @@
     <h2>{data.location.name}, {data.location.country}</h2>
   {/if}
   <div>
-    <Weather {data} />
+    <Notes />
     <ToDo />
+    <Weather {data} />
   </div>
 {:catch err}
   <Error />
