@@ -3,7 +3,6 @@
   import { browser } from "$app/environment";
 
   let notes = "";
-  let hi;
 
   onMount(() => {
     getNotes();

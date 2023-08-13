@@ -32,7 +32,8 @@
 
   const submitHandler = (e) => {
     if (e.key === "Enter") {
-      toDoList = [...toDoList, newToDo];
+      const id = toDoList.at(-1)?.id + 1 || 0;
+      toDoList = [...toDoList, {id, toDo: newToDo}];
       setToDos();
       newToDo = "";
     }
@@ -47,7 +48,7 @@
   {#if toDoList.length === 0}
     <p style="color: #888; padding-left: 0.3rem">No To-Do's</p>
   {/if}
-  {#each toDoList as toDo}
+  {#each toDoList as {toDo, id}}
     <ul>
       <li>
         <input
@@ -56,9 +57,9 @@
           on:change={() => {
             setToDos();
           }}
-          value={toDo}
+          value={id}
         />
-        {#if done.includes(toDo)}
+        {#if done.includes(id)}
           <label style="text-decoration: line-through;" for={toDo}>{toDo}</label
           >
         {:else}
@@ -67,8 +68,8 @@
         <button
           class="icon"
           on:click={() => {
-            toDoList = toDoList.filter((item) => item !== toDo);
-            done = done.filter((item) => item !== toDo);
+            toDoList = toDoList.filter((item) => item.id !== id);
+            done = done.filter((item) => item !== id);
             setToDos();
           }}><DeleteIcon /></button
         >
@@ -86,7 +87,7 @@
     <button
       style="padding-left: 0.1rem;"
       on:click={() => {
-        toDoList = toDoList.filter((item) => !done.includes(item));
+        toDoList = toDoList.filter((item) => !done.includes(item.id));
         done = [];
         setToDos();
       }}>Delete selected</button
