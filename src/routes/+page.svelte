@@ -12,5 +12,10 @@
 <style>
   main {
     height: 100%;
+    background: linear-gradient(
+      0deg,
+      #000 0%,
+      #2e2e2e 100%
+    );
   }
 </style>

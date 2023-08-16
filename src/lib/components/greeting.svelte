@@ -20,6 +20,7 @@
     margin: 2rem 0;
     padding: 0.5rem;
     font-weight: 200;
+    background-color: #2e2e2e;
     border-style: solid;
     border-image: linear-gradient(
         90deg,

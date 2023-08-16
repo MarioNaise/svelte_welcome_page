@@ -39,6 +39,7 @@
     padding: 2rem;
     min-width: 150px;
     width: 25%;
+    border: 1px solid #888;
   }
   :global(p) {
     margin-bottom: 0.3rem;
