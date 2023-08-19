@@ -20,14 +20,13 @@
     margin: 2rem 0;
     padding: 0.5rem;
     font-weight: 200;
-    background-color: #2e2e2e;
     border-style: solid;
     border-image: linear-gradient(
         90deg,
-        rgba(46, 46, 46, 1) 20%,
-        rgba(255, 255, 255, 1) 40%,
-        rgba(241, 241, 241, 1) 60%,
-        rgba(46, 46, 46, 1) 80%
+        transparent 20%,
+        white 40%,
+        white 60%,
+        transparent 80%
       )
       1;
   }
