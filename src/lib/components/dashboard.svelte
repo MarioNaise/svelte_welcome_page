@@ -1,25 +1,18 @@
 <script>
-  import Error from "./error.svelte";
   import Weather from "./weatherCard.svelte";
   import ToDo from "./toDo.svelte";
   import Notes from "./notes.svelte";
   export let data;
 </script>
 
-{#await data}
-  <h2>loading...</h2>
-{:then data}
-  {#if Boolean(data.location)}
-    <h2>{data.location.name}, {data.location.country}</h2>
-  {/if}
-  <div>
-    <Notes />
-    <ToDo />
-    <Weather {data} />
-  </div>
-{:catch err}
-  <Error />
-{/await}
+{#if Boolean(data.location)}
+  <h2>{data.location.name}, {data.location.country}</h2>
+{/if}
+<div>
+  <Notes />
+  <ToDo />
+  <Weather {data} />
+</div>
 
 <style>
   div {
